@@ -1,15 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useAppDispatch, useAppSelector} from '../../app/hooks';
 import {VOICE_NAMES} from '../../constants';
 import getReleaseTime from '../../utils/get-release-time';
 import {movePlayhead} from './drumMachineSlice';
 import Interface from './interface/Interface';
+import LoadingSpinner from './interface/loading-spinner/LoadingSpiner';
 
 export default function DrumMachine(): JSX.Element {
-  const {play, voices, playhead, audioContext, tempo, nextStepTime, volume} = useAppSelector(
-    state => state.drumMachine
-  );
+  const {audioBuffersLoaded, play, voices, playhead, audioContext, tempo, nextStepTime, volume} =
+    useAppSelector(state => state.drumMachine);
+
+  const [showLoading, setShowLoading] = useState(true);
 
   const dispatch = useAppDispatch();
 
@@ -50,5 +52,16 @@ export default function DrumMachine(): JSX.Element {
     }
   }, [play, playhead]);
 
-  return <Interface />;
+  useEffect(() => {
+    if (audioBuffersLoaded) {
+      setShowLoading(false);
+    }
+  }, [audioBuffersLoaded]);
+
+  return (
+    <>
+      <LoadingSpinner show={showLoading} />
+      <Interface />
+    </>
+  );
 }

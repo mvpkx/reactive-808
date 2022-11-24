@@ -3,7 +3,7 @@ import {togglePlay} from '../../drumMachineSlice';
 import styles from './PlayButton.module.css';
 
 export default function PlayButton(): JSX.Element {
-  const play = useAppSelector(state => state.drumMachine.play);
+  const {play} = useAppSelector(state => state.drumMachine);
 
   const dispatch = useAppDispatch();
 
