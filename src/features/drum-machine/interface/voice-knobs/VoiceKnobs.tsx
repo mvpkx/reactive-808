@@ -37,7 +37,7 @@ export default function VoiceKnobs(): JSX.Element {
             step={0.1}
             min={0}
             max={1.5}
-            title={`Set ${name} volume`}
+            title={String(voices[name].volume)}
             value={voices[name].volume}
             onChange={handleVolumeChange}
           />
@@ -47,7 +47,7 @@ export default function VoiceKnobs(): JSX.Element {
             step={50}
             min={-1400}
             max={1400}
-            title={`Set ${name} pitch`}
+            title={String(voices[name].pitch)}
             value={voices[name].pitch}
             onChange={handlePitchChange}
           />
