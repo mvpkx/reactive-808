@@ -6,4 +6,4 @@ Web version of the legendary [Roland TR-808](https://ru.wikipedia.org/wiki/Rolan
 
 Made using TypeScript, Web Audio API, React & Redux Toolkit.
 
-[Check out](https://mvpkx.github.io/reactive-808/)
+[Check it](https://mvpkx.github.io/reactive-808/)
