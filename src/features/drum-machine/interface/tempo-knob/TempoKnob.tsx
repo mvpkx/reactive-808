@@ -1,6 +1,6 @@
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
+import Knob from '../../../common/knob/Knob';
 import {updateTempo} from '../../drumMachineSlice';
-import styles from './TempoKnob.module.css';
 
 export default function TempoKnob(): JSX.Element {
   const tempo = useAppSelector(state => state.drumMachine.tempo);
@@ -13,18 +13,15 @@ export default function TempoKnob(): JSX.Element {
   };
 
   return (
-      <label className={styles.container}>
-        TEMPO
-        <input
-          value={tempo}
-          type="number"
-          onChange={handleTempoChange}
-          step="1"
-          min="50"
-          max="180"
-          title={String(tempo)}
-          className={styles.knob}
-        ></input>
-      </label>
+    <Knob
+      name="tempo"
+      label="TEMPO"
+      value={tempo}
+      onChange={handleTempoChange}
+      step={1}
+      min={50}
+      max={180}
+      title={String(tempo)}
+    />
   );
 }

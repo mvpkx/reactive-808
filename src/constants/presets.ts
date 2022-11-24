@@ -2,12 +2,12 @@ import Preset from '../types/preset';
 
 const PRESETS = [
   {
-    name: 'cybertron',
+    name: 'Cybertron',
     tempo: 140,
-    volume: 0.8,
+    volume: 1,
     voices: {
       BD: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           true,
@@ -29,7 +29,7 @@ const PRESETS = [
         ],
       },
       CB: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -51,7 +51,7 @@ const PRESETS = [
         ],
       },
       CH: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           true,
@@ -73,7 +73,7 @@ const PRESETS = [
         ],
       },
       CL: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -95,7 +95,7 @@ const PRESETS = [
         ],
       },
       CP: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -117,7 +117,7 @@ const PRESETS = [
         ],
       },
       CY: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -139,7 +139,7 @@ const PRESETS = [
         ],
       },
       HC: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -161,7 +161,7 @@ const PRESETS = [
         ],
       },
       HT: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -183,7 +183,7 @@ const PRESETS = [
         ],
       },
       LT: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -205,7 +205,7 @@ const PRESETS = [
         ],
       },
       MA: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -227,7 +227,7 @@ const PRESETS = [
         ],
       },
       OH: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -249,7 +249,7 @@ const PRESETS = [
         ],
       },
       RS: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -271,7 +271,7 @@ const PRESETS = [
         ],
       },
       SD: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -297,10 +297,10 @@ const PRESETS = [
   {
     name: 'blank',
     tempo: 120,
-    volume: 0.8,
+    volume: 1,
     voices: {
       BD: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -322,7 +322,7 @@ const PRESETS = [
         ],
       },
       CB: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -344,7 +344,7 @@ const PRESETS = [
         ],
       },
       CH: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -366,7 +366,7 @@ const PRESETS = [
         ],
       },
       CL: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -388,7 +388,7 @@ const PRESETS = [
         ],
       },
       CP: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -410,7 +410,7 @@ const PRESETS = [
         ],
       },
       CY: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -432,7 +432,7 @@ const PRESETS = [
         ],
       },
       HC: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -454,7 +454,7 @@ const PRESETS = [
         ],
       },
       HT: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -476,7 +476,7 @@ const PRESETS = [
         ],
       },
       LT: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -498,7 +498,7 @@ const PRESETS = [
         ],
       },
       MA: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -520,7 +520,7 @@ const PRESETS = [
         ],
       },
       OH: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -542,7 +542,7 @@ const PRESETS = [
         ],
       },
       RS: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,
@@ -564,7 +564,7 @@ const PRESETS = [
         ],
       },
       SD: {
-        volume: 0.8,
+        volume: 1,
         pitch: 0,
         pattern: [
           false,

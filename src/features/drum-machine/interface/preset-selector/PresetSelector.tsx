@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
 import PRESETS from '../../../../constants/presets';
+import Select from '../../../common/select/Select';
 import {loadPreset} from '../../drumMachineSlice';
-import styles from './PresetSelector.module.css';
 
 export default function PresetSelector(): JSX.Element {
   const preset = useAppSelector(state => state.drumMachine.preset);
@@ -14,15 +14,12 @@ export default function PresetSelector(): JSX.Element {
   };
 
   return (
-    <label className={styles.container}>
-      PRESET SELECT
-      <select value={preset} onChange={handleSelectorChange} className={styles.knob}>
-        {PRESETS.map((preset, index) => (
-          <option key={preset.name} value={index}>
-            {preset.name}
-          </option>
-        ))}
-      </select>
-    </label>
+    <Select
+      name="preset"
+      label="PRESET"
+      options={PRESETS.map(preset => preset.name)}
+      value={preset}
+      onChange={handleSelectorChange}
+    />
   );
 }

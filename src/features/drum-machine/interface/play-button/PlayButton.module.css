@@ -20,4 +20,7 @@
 
 .button:active {
   opacity: 0.8;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.238);
+  transform: scale(0.995, 0.995);
 }

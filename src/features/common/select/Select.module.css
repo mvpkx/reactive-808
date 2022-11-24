@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  color:  rgb(199, 199, 199);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6rem;
+  margin-bottom: 15px;
+}
+
+.container:after {
+  position: absolute;
+  content: '\0025BC';
+  color: #979797;
+  right: 5%;
+  bottom: 15%;
+  pointer-events: none;
+  font-size: xx-small;
+}
+
+.select {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 3px 7px;
+  border: 1px solid rgb(47, 47, 47);
+  background-color: black;
+  color: rgb(199, 199, 199);
+  margin-top: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}

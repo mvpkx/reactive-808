@@ -31,15 +31,6 @@
   border: 1px solid black;
 }
 
-.logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  color: rgb(165, 79, 42);
-  cursor: default;
-}
-
 .left, .right {
   display: flex;
   flex-direction: column;

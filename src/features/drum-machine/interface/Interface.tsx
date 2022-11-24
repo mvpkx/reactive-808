@@ -1,11 +1,12 @@
-import styles from './Interface.module.css';
-import PlayButton from './play-button/PlayButton';
 import PresetSelector from './preset-selector/PresetSelector';
-import StepSelector from './step-selector/StepSelector';
-import TempoKnob from './tempo-knob/TempoKnob';
-import VoiceKnobs from './voice-knobs/VoiceKnobs';
 import VoiceSelector from './voice-selector/VoiceSelector';
+import StepTogglers from './step-togglers/StepTogglers';
+import PlayButton from './play-button/PlayButton';
+import VoiceKnobs from './voice-knobs/VoiceKnobs';
 import VolumeKnob from './volume-knob/VolumeKnob';
+import TempoKnob from './tempo-knob/TempoKnob';
+import styles from './Interface.module.css';
+import Logo from './logo/Logo';
 
 export default function Interface(): JSX.Element {
   return (
@@ -22,12 +23,8 @@ export default function Interface(): JSX.Element {
         </div>
         <div className={styles.right}>
           <VoiceKnobs />
-          <div className={styles.logo}>
-            <h1>Rhythm Composer</h1>
-            <h1>Reactive-808</h1>
-            <p>v 0.0001</p>
-          </div>
-          <StepSelector />
+          <Logo />
+          <StepTogglers />
         </div>
       </div>
     </div>

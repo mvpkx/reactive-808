@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
 import {Volume} from '../../../../types/reducer';
+import Knob from '../../../common/knob/Knob';
 import {updateVolume} from '../../drumMachineSlice';
-import styles from './VolumeKnob.module.css';
 
 export default function VolumeKnob(): JSX.Element {
   const volume = useAppSelector(state => state.drumMachine.volume);
@@ -14,17 +14,15 @@ export default function VolumeKnob(): JSX.Element {
   };
 
   return (
-    <label className={styles.container}>
-      MASTER LEVEL
-      <input
-        value={volume}
-        type="number"
-        onChange={handleVolumeChange}
-        step="0.1"
-        min="0"
-        max="1"
-        className={styles.knob}
-      />
-    </label>
+    <Knob
+      name="master_level"
+      label="LEVEL"
+      value={volume}
+      onChange={handleVolumeChange}
+      step={0.1}
+      min={0}
+      max={1.2}
+      title={String(volume)}
+    />
   );
 }

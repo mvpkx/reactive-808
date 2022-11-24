@@ -16,26 +16,6 @@
   width: 45px;
 }
 
-.voice label, .voice_name {
-  margin: 5px 5px;
-  text-align: center;
-}
-
-.volume_knob, .pitch_knob {
-  width: 100%;
-  border: none;
-  background-color: black;
-  margin: 5px 0px;
-}
-
-.volume_knob {
-  color: rgb(196, 192, 76);
-}
-
-.pitch_knob {
-  color: rgb(199, 199, 199);
-}
-
 .voice_name {
   background-color: rgba(255, 235, 205, 0.79);
   color: black;

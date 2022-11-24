@@ -1,8 +1,8 @@
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
 import {toggleStep} from '../../drumMachineSlice';
-import styles from './StepSelector.module.css';
+import styles from './StepTogglers.module.css';
 
-export default function StepSelector(): JSX.Element {
+export default function StepTogglers(): JSX.Element {
   const {selector, voices, playhead} = useAppSelector(state => state.drumMachine);
   const selected = voices[selector].pattern;
 

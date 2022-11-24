@@ -78,6 +78,9 @@
 
 .step:active {
   opacity: 0.6;
+  border: 1px solid black;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.238);
+  transform: scale(0.99, 0.99);
 }
 
 .step_first_q {
