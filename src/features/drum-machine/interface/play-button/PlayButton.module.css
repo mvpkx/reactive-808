@@ -1,14 +1,20 @@
 .button {
   background-color: rgb(255, 219, 100);
-  border: 1px solid rgb(227, 198, 104);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 3px;
   cursor: pointer;
   padding: 10px;
   box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.238);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.238);
 } 
 
+.button * {
+  width: 100%;
+  border-top: 1px solid black;
+  height: 1px;
+}
+
 .button:hover {
-  background-color: rgb(250, 223, 137);
   border: 1px solid rgb(255, 255, 255);
 }
 
