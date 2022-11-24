@@ -10,7 +10,7 @@ import Logo from './logo/Logo';
 
 export default function Interface(): JSX.Element {
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={styles.panel}>
         <div className={styles.left}>
           <div>

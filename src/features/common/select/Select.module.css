@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   position: relative;
   color:  rgb(199, 199, 199);
   display: flex;
@@ -8,7 +8,7 @@
   margin-bottom: 15px;
 }
 
-.container:after {
+.wrapper:after {
   position: absolute;
   content: '\0025BC';
   color: #979797;

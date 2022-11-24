@@ -33,9 +33,9 @@ export default function StepTogglers(): JSX.Element {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {selected.map((pad, index) => (
-        <div key={index} className={styles.step_container}>
+        <div key={index} className={styles.step_wrapper}>
           <span>{index + 1}</span>
           <button
             onClick={() => handlePadClick(index)}

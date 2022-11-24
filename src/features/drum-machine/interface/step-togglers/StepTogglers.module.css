@@ -1,10 +1,10 @@
-.container {
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.step_container {
+.step_wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;

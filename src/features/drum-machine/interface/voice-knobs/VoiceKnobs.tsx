@@ -28,7 +28,7 @@ export default function VoiceKnobs(): JSX.Element {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {VOICE_NAMES.map(name => (
         <div className={styles.voice} key={name}>
           <Knob

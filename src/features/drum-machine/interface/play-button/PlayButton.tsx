@@ -10,10 +10,12 @@ export default function PlayButton(): JSX.Element {
   };
 
   return (
-    <button onClick={handlePlayStopClick} className={styles.button}>
-      START
-      <div/>
-      STOP
-    </button>
+    <div className={styles.wrapper}>
+      <button onClick={handlePlayStopClick} className={styles.button}>
+        START
+        <div />
+        STOP
+      </button>
+    </div>
   );
 }

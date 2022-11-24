@@ -10,7 +10,7 @@ interface SelectProps {
 
 export default function Select({name, label, value, onChange, options}: SelectProps): JSX.Element {
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <label htmlFor={name}>{label}</label>
       <select name={name} value={value} onChange={onChange} className={styles.select}>
         {options.map((option, index) => (

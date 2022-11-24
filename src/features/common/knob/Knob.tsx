@@ -25,7 +25,7 @@ export default function Knob({
   className,
 }: KnobProps): JSX.Element {
   return (
-    <div className={cx(styles.container, className)}>
+    <div className={cx(styles.wrapper, className)}>
       <label htmlFor={name}>{label}</label>
       <input
         name={name}
