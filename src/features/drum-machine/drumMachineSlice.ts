@@ -4,6 +4,7 @@ import {VoiceKey, Volume} from '../../types/reducer';
 import createIntitalState from '../../utils/create-initial-state';
 import {PATTERN_LENGTH, VOICE_NAMES} from '../../constants';
 import convertBpmToSec from '../../utils/convert-bpm-to-sec';
+import PRESETS from '../../constants/presets';
 
 const loadAudioBuffers = createAsyncThunk(
   'drumMachine/loadAudioBuffers',
@@ -58,13 +59,29 @@ export const drumMachineSlice = createSlice({
       const {volume} = action.payload;
       state.volume = volume;
     },
+    loadPreset: (state, action: PayloadAction<{index: number}>) => {
+      const {index} = action.payload;
+      const preset = PRESETS[index];
+
+      state.preset = index;
+      state.volume = preset.volume;
+      state.tempo = preset.tempo;
+
+      for (let i = 0; i < VOICE_NAMES.length; i++) {
+        state.voices[VOICE_NAMES[i]].pitch = preset.voices[VOICE_NAMES[i]].pitch;
+        state.voices[VOICE_NAMES[i]].volume = preset.voices[VOICE_NAMES[i]].volume;
+        state.voices[VOICE_NAMES[i]].pattern = preset.voices[VOICE_NAMES[i]].pattern;
+      }
+    },
   },
   extraReducers: builder => {
     builder.addCase(loadAudioBuffers.fulfilled, (state, action) => {
       const audioBuffers = action.payload;
+
       for (let i = 0; i < VOICE_NAMES.length; i++) {
         state.voices[VOICE_NAMES[i]].audioBuffer = audioBuffers[i];
       }
+
       state.audioBuffersLoaded = true;
     });
   },
@@ -78,7 +95,8 @@ export const {
   updateVoiceVolume,
   updateVoicePitch,
   updateTempo,
-  updateVolume
+  updateVolume,
+  loadPreset,
 } = drumMachineSlice.actions;
 
 export {loadAudioBuffers};

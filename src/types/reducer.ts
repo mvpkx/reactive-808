@@ -26,7 +26,8 @@ export interface DrumMachineState {
   volume: Volume;
   voices: Voices;
   audioContext: AudioContext;
-  audioBuffersLoaded: Boolean;
+  audioBuffersLoaded: boolean;
+  preset: number;
 }
 
 export type ReducerAction =

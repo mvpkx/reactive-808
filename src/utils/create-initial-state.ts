@@ -1,21 +1,18 @@
-import {
-  PATTERN_LENGTH,
-  DEFAULT_TEMPO,
-  VOICE_NAMES,
-  DEFAULT_VOICE_VOLUME,
-  DEFAULT_MASTER_VOLUME,
-  DEFAULT_PITCH,
-} from '../constants';
+import {DEFAULT_TEMPO, VOICE_NAMES} from '../constants';
+import PRESETS from '../constants/presets';
 import {DrumMachineState} from '../types/reducer';
 import convertBpmToSec from './convert-bpm-to-sec';
 
 export default function createIntitalState(): DrumMachineState {
   const audioContext = new AudioContext();
+
+  const [defaultPreset] = PRESETS;
+
   const keyAndValue = VOICE_NAMES.map(name => {
     const voice = {
-      volume: DEFAULT_VOICE_VOLUME,
-      pitch: DEFAULT_PITCH,
-      pattern: new Array(PATTERN_LENGTH).fill(false),
+      volume: defaultPreset.voices[name].volume,
+      pitch: defaultPreset.voices[name].pitch,
+      pattern: defaultPreset.voices[name].pattern,
     };
     return [name, voice];
   });
@@ -25,12 +22,13 @@ export default function createIntitalState(): DrumMachineState {
   return {
     audioContext,
     play: false,
-    tempo: DEFAULT_TEMPO,
+    tempo: defaultPreset.tempo,
     selector: VOICE_NAMES[0],
     playhead: -1,
     nextStepTime: audioContext.currentTime + convertBpmToSec(DEFAULT_TEMPO),
-    volume: DEFAULT_MASTER_VOLUME,
+    volume: defaultPreset.volume,
     voices,
     audioBuffersLoaded: false,
+    preset: 0,
   };
 }

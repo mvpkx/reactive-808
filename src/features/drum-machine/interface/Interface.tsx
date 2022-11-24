@@ -1,5 +1,6 @@
 import styles from './Interface.module.css';
 import PlayButton from './play-button/PlayButton';
+import PresetSelector from './preset-selector/PresetSelector';
 import StepSelector from './step-selector/StepSelector';
 import TempoKnob from './tempo-knob/TempoKnob';
 import VoiceKnobs from './voice-knobs/VoiceKnobs';
@@ -12,6 +13,7 @@ export default function Interface(): JSX.Element {
       <div className={styles.panel}>
         <div className={styles.left}>
           <div>
+            <PresetSelector />
             <VoiceSelector />
             <VolumeKnob />
             <TempoKnob />
