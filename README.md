@@ -1,7 +1,9 @@
-# Reactive-808
+# 🔊 Reactive-808
 
-My web version of the legendary Roland TR-808 drum machine.
+![Reactive-808 screenshot](/screen.png)
 
-Made using Web Audio API, React & Redux Toolkit.
+Web version of the legendary [Roland TR-808](https://ru.wikipedia.org/wiki/Roland_TR-808) drum machine.
 
-https://mvpkx.github.io/reactive-808/
+Made using TypeScript, Web Audio API, React & Redux Toolkit.
+
+[Check it](https://mvpkx.github.io/reactive-808/)
