@@ -17,6 +17,7 @@ export default function PresetSelector(): JSX.Element {
     <Select
       name="preset"
       label="PRESET"
+      byIndex={true}
       options={PRESETS.map(preset => preset.name)}
       value={preset}
       onChange={handleSelectorChange}
