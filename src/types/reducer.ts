@@ -1,4 +1,5 @@
 import {VOICE_NAMES, PATTERN_LENGTH} from '../constants/';
+import Preset from './preset';
 
 type Tuple<TItem, TLength extends number> = [TItem, ...TItem[]] & {length: TLength};
 
@@ -28,6 +29,7 @@ export interface DrumMachineState {
   audioContext: AudioContext;
   audioBuffersLoaded: boolean;
   preset: number;
+  presetsList: Preset[];
 }
 
 export type ReducerAction =
@@ -74,6 +76,12 @@ export type ReducerAction =
   | {
       type: 'CREATE_AC';
       payload?: null;
+    }
+  | {
+      type: 'LOAD_UPLOADED';
+      payload: {
+        preset: Preset;
+      };
     };
 
 export interface GetSourceThunkArg {

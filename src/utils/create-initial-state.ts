@@ -30,5 +30,6 @@ export default function createIntitalState(): DrumMachineState {
     voices,
     audioBuffersLoaded: false,
     preset: 0,
+    presetsList: PRESETS,
   };
 }

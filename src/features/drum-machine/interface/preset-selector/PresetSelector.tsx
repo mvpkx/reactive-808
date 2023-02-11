@@ -1,10 +1,9 @@
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
-import PRESETS from '../../../../constants/presets';
 import Select from '../../../common/select/Select';
 import {loadPreset} from '../../drumMachineSlice';
 
 export default function PresetSelector(): JSX.Element {
-  const preset = useAppSelector(state => state.drumMachine.preset);
+  const {preset, presetsList} = useAppSelector(state => state.drumMachine);
 
   const dispatch = useAppDispatch();
 
@@ -18,7 +17,7 @@ export default function PresetSelector(): JSX.Element {
       name="preset"
       label="PRESET"
       byIndex={true}
-      options={PRESETS.map(preset => preset.name)}
+      options={presetsList.map(preset => preset.name)}
       value={preset}
       onChange={handleSelectorChange}
     />

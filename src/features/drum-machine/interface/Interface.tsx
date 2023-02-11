@@ -7,6 +7,8 @@ import VolumeKnob from './volume-knob/VolumeKnob';
 import TempoKnob from './tempo-knob/TempoKnob';
 import styles from './Interface.module.css';
 import Logo from './logo/Logo';
+import SimpleButton from '../../common/simple-button';
+import SaveLoad from './save-load';
 
 export default function Interface(): JSX.Element {
   return (
@@ -15,6 +17,7 @@ export default function Interface(): JSX.Element {
         <div className={styles.left}>
           <div>
             <PresetSelector />
+            <SaveLoad />
             <VoiceSelector />
             <VolumeKnob />
             <TempoKnob />
@@ -23,6 +26,7 @@ export default function Interface(): JSX.Element {
         </div>
         <div className={styles.right}>
           <VoiceKnobs />
+
           <Logo />
           <StepTogglers />
         </div>

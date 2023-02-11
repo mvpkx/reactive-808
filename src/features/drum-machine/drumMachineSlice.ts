@@ -4,7 +4,7 @@ import {VoiceKey, Volume} from '../../types/reducer';
 import createIntitalState from '../../utils/create-initial-state';
 import {PATTERN_LENGTH, VOICE_NAMES} from '../../constants';
 import convertBpmToSec from '../../utils/convert-bpm-to-sec';
-import PRESETS from '../../constants/presets';
+import Preset from '../../types/preset';
 
 const loadAudioBuffers = createAsyncThunk(
   'drumMachine/loadAudioBuffers',
@@ -61,7 +61,7 @@ export const drumMachineSlice = createSlice({
     },
     loadPreset: (state, action: PayloadAction<{index: number}>) => {
       const {index} = action.payload;
-      const preset = PRESETS[index];
+      const preset = state.presetsList[index];
 
       state.preset = index;
       state.volume = preset.volume;
@@ -71,6 +71,21 @@ export const drumMachineSlice = createSlice({
         state.voices[VOICE_NAMES[i]].pitch = preset.voices[VOICE_NAMES[i]].pitch;
         state.voices[VOICE_NAMES[i]].volume = preset.voices[VOICE_NAMES[i]].volume;
         state.voices[VOICE_NAMES[i]].pattern = preset.voices[VOICE_NAMES[i]].pattern;
+      }
+    },
+    loadUploaded: (state, action: PayloadAction<{preset: Preset}>) => {
+      const {preset} = action.payload;
+      state.presetsList.unshift(preset);
+      const uploadedPreset = state.presetsList[0];
+
+      state.preset = 0;
+      state.volume = uploadedPreset.volume;
+      state.tempo = uploadedPreset.tempo;
+
+      for (let i = 0; i < VOICE_NAMES.length; i++) {
+        state.voices[VOICE_NAMES[i]].pitch = uploadedPreset.voices[VOICE_NAMES[i]].pitch;
+        state.voices[VOICE_NAMES[i]].volume = uploadedPreset.voices[VOICE_NAMES[i]].volume;
+        state.voices[VOICE_NAMES[i]].pattern = uploadedPreset.voices[VOICE_NAMES[i]].pattern;
       }
     },
   },
@@ -97,6 +112,7 @@ export const {
   updateTempo,
   updateVolume,
   loadPreset,
+  loadUploaded,
 } = drumMachineSlice.actions;
 
 export {loadAudioBuffers};
