@@ -80,7 +80,12 @@ const SaveLoad: React.FC = () => {
         })
       ),
     };
-    const newLink = window.location.href + '?' + window.btoa(JSON.stringify(newPreset));
+
+    const stringified = JSON.stringify(newPreset);
+    const coded = window.btoa(stringified);
+    const {origin, pathname} = window.location;
+    const newLink = origin + pathname + '?shared=' + coded;
+
     setLink(newLink);
   };
 

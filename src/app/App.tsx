@@ -13,11 +13,15 @@ export default function App(): JSX.Element {
   useEffect(() => {
     dispatch(loadAudioBuffers(audioContext));
 
-    const queryString = window.location;
+    const {search} = window.location;
+    const preset = new URLSearchParams(search);
+    const shared = preset.get('shared');
 
-    if (queryString.pathname.length > 1) {
+    preset.delete('shared');
+
+    if (shared) {
       try {
-        const decoded = window.atob(queryString.pathname.slice(2));
+        const decoded = window.atob(shared);
         const preset = JSON.parse(decoded);
         dispatch(loadUploaded({preset: preset as Preset}));
       } catch (error) {
