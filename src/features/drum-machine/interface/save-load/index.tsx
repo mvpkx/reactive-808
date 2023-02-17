@@ -80,7 +80,7 @@ const SaveLoad: React.FC = () => {
         })
       ),
     };
-    const newLink = window.location.href + window.btoa(JSON.stringify(newPreset));
+    const newLink = window.location.href + '?' + window.btoa(JSON.stringify(newPreset));
     setLink(newLink);
   };
 

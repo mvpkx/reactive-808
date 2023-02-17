@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
 
     if (queryString.pathname.length > 1) {
       try {
-        const decoded = window.atob(queryString.pathname.slice(1));
+        const decoded = window.atob(queryString.pathname.slice(2));
         const preset = JSON.parse(decoded);
         dispatch(loadUploaded({preset: preset as Preset}));
       } catch (error) {
