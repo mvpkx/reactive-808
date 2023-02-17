@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {useAppDispatch, useAppSelector} from '../../../../app/hooks';
 import {VOICE_NAMES} from '../../../../constants';
 import Preset from '../../../../types/preset';
@@ -61,10 +61,34 @@ const SaveLoad: React.FC = () => {
     }
   };
 
+  const [link, setLink] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    const newPreset = {
+      name: 'Shared preset',
+      tempo,
+      volume,
+      voices: Object.fromEntries(
+        VOICE_NAMES.map(name => {
+          const voice = {
+            volume: voices[name].volume,
+            pitch: voices[name].pitch,
+            pattern: voices[name].pattern,
+          };
+          return [name, voice];
+        })
+      ),
+    };
+    const newLink = window.location.href + window.btoa(JSON.stringify(newPreset));
+    setLink(newLink);
+  };
+
   return (
     <div className={styles.wrapper}>
       <SimpleButton text="SAVE" onClick={handleSaveClick} />
       <SimpleButton text="LOAD" onClick={handleLoadClick} />
+      <SimpleButton text="SHARE" onClick={handleShare} />
       <input
         type="file"
         ref={fileInput}
@@ -72,6 +96,50 @@ const SaveLoad: React.FC = () => {
         style={{display: 'none'}}
         accept=".json"
       />
+      {link && (
+        <>
+          <div
+            className={styles.modalBackdrop}
+            onClick={() => {
+              setLink(null);
+              setCopied(false);
+            }}
+          />
+
+          <div className={styles.modal}>
+            <div className={styles.title}>
+              <span className={styles.titleText}>Link to share your sequence:</span>
+              <span
+                className={styles.close}
+                onClick={() => {
+                  setLink(null);
+                  setCopied(false);
+                }}
+              >
+                ✕
+              </span>
+            </div>
+            <textarea
+              className={styles.input}
+              value={link}
+              onFocus={e => {
+                e.target.select();
+                navigator.clipboard.writeText(link);
+                setCopied(true);
+              }}
+            />
+            <span
+              className={styles.copiedText}
+              onClick={() => {
+                navigator.clipboard.writeText(link);
+                setCopied(true);
+              }}
+            >
+              {copied ? 'Copied!' : 'Click to copy'}
+            </span>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -5,4 +5,78 @@
   align-items: center;
   margin-bottom: 16px;
   width: 100%;
+  gap: 5px;
+}
+
+.modalBackdrop {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.146);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: absolute;
+  width: 320px;
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  padding-top: 15px;
+  z-index: 2;
+  height: auto;
+  border-radius: 10px;
+  top: 120px;
+  left: 200px;
+  height: 87px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.238);
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.titleText {
+  color: rgb(228, 228, 228);
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.close {
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.copiedText {
+  color: rgb(228, 228, 228);
+  font-size: 0.8rem;
+  text-align: right;
+  cursor: pointer;
+  align-self: end;
 }
