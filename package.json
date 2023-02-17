@@ -1,6 +1,7 @@
 {
   "name": "reactive-808",
   "version": "0.1.0",
+  "homepage": "https://mvpkx.github.io/reactive-808",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
@@ -22,7 +23,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "PUBLIC_URL=/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
